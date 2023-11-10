@@ -124,6 +124,7 @@
     color: rgba(0, 0, 0, 0.66);
   }
 
+  .generated_expression_input,
   .name_input {
     border-radius: 10px;
     border: 1px solid #f5f5f5;
@@ -181,6 +182,8 @@
   .mat-column-spDataType,
   .mat-column-spIndexColName,
   .mat-column-srcIndexColName,
+  .mat-column-spColGeneratedExpression,
+  .mat-column-srcColGeneratedExpression,
   .mat-column-spColMaxLength,
   .mat-column-srcColMaxLength {
     min-width: 100px;

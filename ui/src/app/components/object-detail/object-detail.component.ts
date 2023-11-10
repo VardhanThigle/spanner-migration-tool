@@ -67,9 +67,9 @@ export class ObjectDetailComponent implements OnInit {
     })
   }
 
-  srcDisplayedColumns = ['srcOrder', 'srcColName', 'srcDataType', 'srcColMaxLength', 'srcIsPk', 'srcIsNotNull']
+  srcDisplayedColumns = ['srcOrder', 'srcColName', 'srcDataType', 'srcColMaxLength','srcColGeneratedExpression', 'srcIsPk']
 
-  spDisplayedColumns = ['spColName', 'spDataType', 'spColMaxLength', 'spIsPk', 'spIsNotNull', 'dropButton']
+  spDisplayedColumns = ['spColName', 'spDataType', 'spColMaxLength', 'spColGeneratedExpression', 'spIsPk', 'spIsNotNull', 'dropButton']
   displayedFkColumns = [
     'srcName',
     'srcColumns',

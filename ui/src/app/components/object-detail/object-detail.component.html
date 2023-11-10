@@ -131,6 +131,18 @@
               </td>
             </ng-container>
 
+            
+            <ng-container matColumnDef="srcColGeneratedExpression">
+              <th class="table_header" mat-header-cell *matHeaderCellDef>Generated Expressionn</th>
+              <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.get('srcColName').value === 'child_id'">
+                <p>(id * 2)</p>
+                <p> VIRTUAL </p>
+                </div>
+              </td>
+            </ng-container>
+            
+
             <ng-container matColumnDef="srcIsPk">
               <th class="table_header" mat-header-cell *matHeaderCellDef>Pk</th>
               <td mat-cell *matCellDef="let element">
@@ -150,6 +162,7 @@
                 {{ element.get('srcIsNotNull').value ? 'Not Null' : '' }}
               </td>
             </ng-container>
+
 
             <tr mat-header-row *matHeaderRowDef="['srcDatabase']"></tr>
             <tr mat-header-row *matHeaderRowDef="srcDisplayedColumns"></tr>
@@ -244,6 +257,32 @@
               </div>
               </td>
             </ng-container>
+
+          
+            <ng-container matColumnDef="spColGeneratedExpression">
+              <th class="table_header" mat-header-cell *matHeaderCellDef>Generated Expressionn</th>
+              <td mat-cell *matCellDef="let element">
+                <div *ngIf="isEditMode">
+                  <p><mat-checkbox #isGen
+                      color="primary"
+                      [checked]="element.get('spColName').value != 'child_id'" 
+                  ></mat-checkbox></p>
+                  <p *ngIf="isGen.checked"><input
+                    matInput
+                    class="generated_expression_input"
+                    type="text" /></p>
+                  <p *ngIf="isGen.checked">STORED</p>
+                </div>
+
+                <div *ngIf="!isEditMode && element.get('spColName').value === 'child_id'">
+                  <p>(id * 2)</p>
+                  <p>STORED</p>
+                </div>
+              </td>
+            </ng-container>
+          
+          
+
 
             <ng-container matColumnDef="spIsPk">
               <th class="table_header" mat-header-cell *matHeaderCellDef>Pk</th>
