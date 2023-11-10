@@ -277,7 +277,9 @@ export class ConversionService {
         srcId: colId,
         spId: spannerColDef ? colId : '',
         spColMaxLength: spannerColDef?.T.Len != 0 ? (spannerColDef?.T.Len != spColMax ? spannerColDef?.T.Len: 'MAX') : '',
-        srcColMaxLength: data.SrcSchema[tableId].ColDefs[colId].Type.Mods != null ? data.SrcSchema[tableId].ColDefs[colId].Type.Mods[0] : ''
+        srcColMaxLength: data.SrcSchema[tableId].ColDefs[colId].Type.Mods != null ? data.SrcSchema[tableId].ColDefs[colId].Type.Mods[0] : '',
+        spColGeneratedExpression: "ABCD_1234",
+        srcColGeneratedExpression: "ABCD_1234",
       }
     })
     if (spColIds) {
@@ -299,8 +301,10 @@ export class ConversionService {
             srcIsNotNull: false,
             srcId: '',
             spId: colId,
+            spColGeneratedExpression: "ABCD_test",
+            srcColGeneratedExpression: "ABCD_test",
             srcColMaxLength: '',
-            spColMaxLength: spannerColDef?.T.Len
+            spColMaxLength: spannerColDef?.T.Len,
           })
         }
       })

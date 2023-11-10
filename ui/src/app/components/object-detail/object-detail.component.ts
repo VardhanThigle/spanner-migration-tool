@@ -67,9 +67,9 @@ export class ObjectDetailComponent implements OnInit {
     })
   }
 
-  srcDisplayedColumns = ['srcOrder', 'srcColName', 'srcDataType', 'srcColMaxLength', 'srcIsPk', 'srcIsNotNull']
+  srcDisplayedColumns = ['srcOrder', 'srcColName', 'srcDataType', 'srcColMaxLength','srcColGeneratedExpression', 'srcIsPk', 'src']
 
-  spDisplayedColumns = ['spColName', 'spDataType', 'spColMaxLength', 'spIsPk', 'spIsNotNull', 'dropButton']
+  spDisplayedColumns = ['spColName', 'spDataType', 'spColMaxLength', 'spColGeneratedExpression', 'spIsPk', 'spIsNotNull', 'dropButton']
   displayedFkColumns = [
     'srcName',
     'srcColumns',
@@ -198,6 +198,7 @@ export class ObjectDetailComponent implements OnInit {
           srcOrder: new FormControl(row.srcOrder),
           srcColName: new FormControl(row.srcColName),
           srcDataType: new FormControl(row.srcDataType),
+          srcColGeneratedExpression: new FormControl(row.srcColGeneratedExpression),
           srcIsPk: new FormControl(row.srcIsPk),
           srcIsNotNull: new FormControl(row.srcIsNotNull),
           srcColMaxLength: new FormControl(row.srcColMaxLength),
@@ -207,6 +208,7 @@ export class ObjectDetailComponent implements OnInit {
             Validators.pattern('^[a-zA-Z]([a-zA-Z0-9/_]*[a-zA-Z0-9])?'),
           ]),
           spDataType: new FormControl(row.spDataType),
+          spColGeneratedExpression: new FormControl(row.spColGeneratedExpression),
           spIsPk: new FormControl(row.spIsPk),
           spIsNotNull: new FormControl(row.spIsNotNull), spId: new FormControl(row.spId),
           srcId: new FormControl(row.srcId),
@@ -247,6 +249,7 @@ export class ObjectDetailComponent implements OnInit {
             srcOrder: new FormControl(col.srcOrder),
             srcColName: new FormControl(col.srcColName),
             srcDataType: new FormControl(col.srcDataType),
+            srcColGeneratedExpression: new FormControl(col.srcColGeneratedExpression),
             srcIsPk: new FormControl(col.srcIsPk),
             srcIsNotNull: new FormControl(col.srcIsNotNull),
             srcColMaxLength: new FormControl(col.srcColMaxLength),
@@ -258,6 +261,7 @@ export class ObjectDetailComponent implements OnInit {
             spId: new FormControl(col.spId),
             srcId: new FormControl(col.srcId),
             spColMaxLength: new FormControl(col.spColMaxLength),
+            spColGeneratedExpression: new FormControl(col.spColGeneratedExpression),
           })
         )
       } else {

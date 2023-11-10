@@ -131,6 +131,13 @@
               </td>
             </ng-container>
 
+            /*
+            <ng-container matColumnDef="srcColGeneratedExpression">
+              <th mat-header-cell class="table_header" *matHeaderCellDef>GeneratedExpression</th>
+              <td mat-cell *matCellDef="let element">ABCD_SRD_1234</td>
+            </ng-container>
+            */
+
             <ng-container matColumnDef="srcIsPk">
               <th class="table_header" mat-header-cell *matHeaderCellDef>Pk</th>
               <td mat-cell *matCellDef="let element">
@@ -150,6 +157,7 @@
                 {{ element.get('srcIsNotNull').value ? 'Not Null' : '' }}
               </td>
             </ng-container>
+
 
             <tr mat-header-row *matHeaderRowDef="['srcDatabase']"></tr>
             <tr mat-header-row *matHeaderRowDef="srcDisplayedColumns"></tr>
@@ -244,6 +252,25 @@
               </div>
               </td>
             </ng-container>
+
+            /*
+            <ng-container matColumnDef="spColGeneratedExpression">
+              <th mat-header-cell class="table_header" *matHeaderCellDef>GeneratedExpression</th>
+              <td mat-cell *matCellDef="let element">
+                <div *ngIf="isEditMode">
+                  <input
+                    matInput
+                    class="generated_expression_input"
+                    type="text"
+                    matTooltip="GeneratedExpression for the column."
+                    [matTooltipDisabled]="!element.get('spColGeneratedExpression')?.hasError('pattern')" />
+                </div>
+                <p *ngIf="!isEditMode">ABCD_SP_1234</p>
+              </td>
+            </ng-container>
+            */
+          
+
 
             <ng-container matColumnDef="spIsPk">
               <th class="table_header" mat-header-cell *matHeaderCellDef>Pk</th>
